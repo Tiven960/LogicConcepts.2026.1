@@ -2,4 +2,22 @@
   <Folder Name="/01/">
     <Project Path="IsNumberOddOrNot/IsNumberOddOrNot.csproj" />
   </Folder>
+  <Folder Name="/02/">
+    <Project Path="TheGreathestNumber/TheGreathestNumber.csproj" />
+  </Folder>
+  <Folder Name="/03/">
+    <Project Path="SortNumbers/SortNumbers.csproj" />
+  </Folder>
+  <Folder Name="/04/">
+    <Project Path="IsMultipleOfAnother/IsMultipleOfAnother.csproj" />
+  </Folder>
+  <Folder Name="/05/">
+    <Project Path="IsLeapYear/IsLeapYear.csproj" />
+  </Folder>
+  <Folder Name="/06/">
+    <Project Path="SimplePayroll/SimplePayroll.csproj" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/Shared.csproj" />
+  </Folder>
 </Solution>
