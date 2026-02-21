@@ -5,12 +5,12 @@ var answer = string.Empty;
 var options = new List<string> { "s", "n" };
 do
 {
-    Console.WriteLine("Ingrese la viga: ");
+    Console.WriteLine("Ingrese la viga:");
     answer = Console.ReadLine();
 
-    if (esValido(answer!))
+    if (esValido(answer))
     {
-        if (!soportePeso(answer!))
+        if (soportaPeso(answer))
         {
             Console.WriteLine("La viga soporta el peso!");
         }
@@ -33,19 +33,19 @@ do
             } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
 } while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
 
- bool esValido(string baseText)
+ static bool esValido(string viga)
 {
-    String viga = baseText.Substring(0, 1);
-    if (baseText == "#" || baseText == "&" || baseText == "%")
+    String baseText = viga.Substring(0, 1);
+    if (!(baseText == "#" || baseText == "&" || baseText == "%"))
     {
-        return true;
+        return false;
     }
 
-    int n = baseText.Length;
+    int n = viga.Length;
     int conCon = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        String pieza = baseText.Substring(i, i + 1);
+        String pieza = viga.Substring(i, 1);
         if(!(pieza == "=" || pieza == "*")){
             return false;
         }
@@ -65,19 +65,19 @@ do
         }   
     }
 
-    return false;
+    return true;
 }
 
-bool soportePeso(string baseText)
+static bool soportaPeso(string viga)
 {
-    String viga = baseText.Substring(0, 1);
+    String baseText = viga.Substring(0, 1);
 
-    int n = baseText.Length;
+    int n = viga.Length;
     int pesoTotal = 0;
     int pesoSegmento = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        String pieza = baseText.Substring(i, i + 1);
+         String pieza = viga.Substring(i, 1);
         if (pieza == "=")
         {
             pesoSegmento++;
@@ -94,13 +94,13 @@ bool soportePeso(string baseText)
     switch (baseText)
     {
         case "#":
-            pesoBase = 10;
+            pesoBase = 90;
             break;
         case "&":
             pesoBase = 30;
             break;
         case "%":
-            pesoBase = 90;
+            pesoBase = 10;
             break;
     }
     
