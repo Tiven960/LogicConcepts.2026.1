@@ -20,6 +20,9 @@
   <Folder Name="/28/">
     <Project Path="TheStrongestBeam/28TheStrongestBeam.csproj" Id="aa39a987-65a3-4f17-9000-3941cc9307f7" />
   </Folder>
+  <Folder Name="/37/">
+    <Project Path="37HorsesInConflict/37HorsesInConflict.csproj" Id="6006f04b-fcc5-425a-941f-646ae11b6856" />
+  </Folder>
   <Folder Name="/Shared/">
     <Project Path="Shared/Shared.csproj" />
   </Folder>
